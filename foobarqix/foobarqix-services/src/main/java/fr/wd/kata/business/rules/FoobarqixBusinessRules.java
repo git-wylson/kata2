@@ -21,9 +21,9 @@ import fr.wd.kata.business.domain.type.FooBarQixEnum;
  * @author wylson dibinga wd
  */
 @Component
-public class ValidatorBusinessRules {
+public class FoobarqixBusinessRules {
 
-	public ValidatorBusinessRules() {
+	public FoobarqixBusinessRules() {
 	}
 
 	/**

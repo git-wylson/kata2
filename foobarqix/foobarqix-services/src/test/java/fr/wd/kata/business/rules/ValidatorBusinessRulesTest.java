@@ -17,7 +17,7 @@ public class ValidatorBusinessRulesTest {
 
 	@InjectMocks
 	@Spy
-	private ValidatorBusinessRules validator;
+	private FoobarqixBusinessRules validator;
 
 	@Test
 	public void test_calculateNumberTest_ShouldReturn_FooFoo_If_Number_Is_3() {

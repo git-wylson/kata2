@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.wd.kata.business.rules.ValidatorBusinessRules;
+import fr.wd.kata.business.rules.FoobarqixBusinessRules;
 import fr.wd.kata.business.services.IFoobarqixService;
 import fr.wd.kata.domain.FooBarQix;
 import fr.wd.kata.exceptions.BusinessException;
@@ -20,7 +20,7 @@ import fr.wd.kata.exceptions.BusinessException;
 public class FoobarqixServiceImpl implements IFoobarqixService {
 
 	@Autowired
-	private ValidatorBusinessRules validator;
+	private FoobarqixBusinessRules validator;
 
 	@Override
 	public List<FooBarQix> calculteNumber(Integer maxNumber) throws BusinessException {

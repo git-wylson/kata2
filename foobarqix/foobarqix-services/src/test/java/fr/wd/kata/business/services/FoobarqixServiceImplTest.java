@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import fr.wd.kata.business.domain.FooBarQix;
 import fr.wd.kata.config.ServicesConfig;
+import fr.wd.kata.domain.FooBarQix;
 
 /**
  * Testing integration with Spring

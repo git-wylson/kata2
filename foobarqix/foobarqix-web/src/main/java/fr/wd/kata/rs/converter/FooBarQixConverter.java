@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.google.common.base.Converter;
 
-import fr.wd.kata.business.domain.FooBarQix;
+import fr.wd.kata.domain.FooBarQix;
 import fr.wd.kata.rs.domain.FooBarQixRest;
 
 /**

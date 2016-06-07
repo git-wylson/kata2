@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.collect.Lists;
 
-import fr.wd.kata.business.domain.FooBarQix;
 import fr.wd.kata.business.services.IFoobarqixService;
+import fr.wd.kata.domain.FooBarQix;
+import fr.wd.kata.exceptions.BusinessException;
 import fr.wd.kata.rs.converter.FooBarQixConverter;
 import fr.wd.kata.rs.domain.FooBarQixRest;
 import fr.wd.kata.rs.utils.URI;
@@ -35,11 +36,12 @@ public class FoobarqixRestController {
 	 * @return ResponseEntity<List<String>>
 	 */
 	@RequestMapping(value = URI.FOOBARQIX, method = RequestMethod.GET)
-	public ResponseEntity<List<FooBarQixRest>> listAllNumbers() {
+	public ResponseEntity<List<FooBarQixRest>> listAllNumbers() throws BusinessException {
 		List<FooBarQix> results = foobarqixService.calculteNumber(100);
 		List<FooBarQixRest> restResults = Lists.newArrayList(converter.reverse().convertAll(results));
 		if (results.isEmpty()) {
-			return new ResponseEntity<List<FooBarQixRest>>(HttpStatus.NO_CONTENT);// we return HttpStatus.NOT_FOUND
+			// we return HttpStatus.NOT_FOUND
+			return new ResponseEntity<List<FooBarQixRest>>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<List<FooBarQixRest>>(restResults, HttpStatus.OK);
 	}

@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import fr.wd.kata.business.domain.FooBarQix;
 import fr.wd.kata.business.services.IFoobarqixService;
 import fr.wd.kata.config.ServicesConfig;
+import fr.wd.kata.domain.FooBarQix;
 
 /**
  * Main console test.

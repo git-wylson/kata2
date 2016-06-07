@@ -1,4 +1,4 @@
-package fr.wd.kata.business.services;
+package fr.wd.kata.business.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.wd.kata.business.domain.FooBarQix;
 import fr.wd.kata.business.rules.ValidatorBusinessRules;
+import fr.wd.kata.business.services.IFoobarqixService;
+import fr.wd.kata.domain.FooBarQix;
+import fr.wd.kata.exceptions.BusinessException;
 
 /**
  * Business service class. The back end service contains all the processing profession of application
@@ -20,7 +22,8 @@ public class FoobarqixServiceImpl implements IFoobarqixService {
 	@Autowired
 	private ValidatorBusinessRules validator;
 
-	public List<FooBarQix> calculteNumber(Integer maxNumber) {
+	@Override
+	public List<FooBarQix> calculteNumber(Integer maxNumber) throws BusinessException {
 		List<FooBarQix> results = new ArrayList<FooBarQix>(maxNumber);
 
 		for (int number = 1; number <= maxNumber; number++) {

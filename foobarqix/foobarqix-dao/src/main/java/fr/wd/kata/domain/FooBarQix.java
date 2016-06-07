@@ -1,4 +1,4 @@
-package fr.wd.kata.business.domain;
+package fr.wd.kata.domain;
 
 /**
  * Business class for FooBarQix. The object who allows to set the number and result

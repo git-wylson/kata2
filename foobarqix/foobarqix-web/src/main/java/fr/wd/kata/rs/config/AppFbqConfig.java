@@ -9,6 +9,6 @@ import fr.wd.kata.config.ServicesConfig;
 @EnableAutoConfiguration
 @ComponentScan(basePackages = { "fr.wd.kata.rs" })
 @Import({ ServicesConfig.class })
-public class AppConfig {
+public class AppFbqConfig {
 
 }

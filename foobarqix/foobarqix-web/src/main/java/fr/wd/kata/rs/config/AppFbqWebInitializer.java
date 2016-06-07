@@ -8,10 +8,10 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
  * @author wylson
  *
  */
-public class AppWebInitializer extends SpringBootServletInitializer {
+public class AppFbqWebInitializer extends SpringBootServletInitializer {
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(AppConfig.class);
+		return application.sources(AppFbqConfig.class);
 	}
 
 }

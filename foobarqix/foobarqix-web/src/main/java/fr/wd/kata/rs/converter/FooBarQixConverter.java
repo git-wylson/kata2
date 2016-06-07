@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import com.google.common.base.Converter;
 
 import fr.wd.kata.business.domain.FooBarQix;
-import fr.wd.kata.rs.model.FooBarQixRest;
+import fr.wd.kata.rs.domain.FooBarQixRest;
 
 /**
  * This class convert business model to transfert object data

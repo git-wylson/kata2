@@ -1,4 +1,4 @@
-package fr.wd.kata.rs.model;
+package fr.wd.kata.rs.domain;
 
 public class FooBarQixRest {
 

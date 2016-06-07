@@ -7,8 +7,8 @@ import fr.wd.kata.config.ServicesConfig;
 
 
 @EnableAutoConfiguration
-@ComponentScan(basePackages = { "fr.wd.kata.rs" , "hello"})
+@ComponentScan(basePackages = { "fr.wd.kata.rs" })
 @Import({ ServicesConfig.class })
-public class ApplicationConfig {
+public class AppConfig {
 
 }

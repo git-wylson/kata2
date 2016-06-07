@@ -14,7 +14,8 @@ import com.google.common.collect.Lists;
 import fr.wd.kata.business.domain.FooBarQix;
 import fr.wd.kata.business.services.IFoobarqixService;
 import fr.wd.kata.rs.converter.FooBarQixConverter;
-import fr.wd.kata.rs.model.FooBarQixRest;
+import fr.wd.kata.rs.domain.FooBarQixRest;
+import fr.wd.kata.rs.utils.URI;
 
 /**
  * This class is the service rest for application
@@ -33,7 +34,7 @@ public class FoobarqixRestController {
 	 * This method retrieve all results
 	 * @return ResponseEntity<List<String>>
 	 */
-	@RequestMapping(value = "/foobarqix", method = RequestMethod.GET)
+	@RequestMapping(value = URI.FOOBARQIX, method = RequestMethod.GET)
 	public ResponseEntity<List<FooBarQixRest>> listAllNumbers() {
 		List<FooBarQix> results = foobarqixService.calculteNumber(100);
 		List<FooBarQixRest> restResults = Lists.newArrayList(converter.reverse().convertAll(results));

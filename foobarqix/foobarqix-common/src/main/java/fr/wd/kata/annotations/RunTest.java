@@ -27,6 +27,10 @@ public class RunTest {
 				Annotation annotation = field.getAnnotation(TesterInfo.class);
 				TesterInfo test = (TesterInfo) annotation;
 
+				System.out.printf("%nField annotation :%s", field.getAnnotations());
+				System.out.printf("%nField annotation declarer :%s", field.getDeclaredAnnotations());
+				System.out.printf("%nName :%s", field.getName());
+				System.out.printf("%nType :%s", field.getType());
 				System.out.printf("%nName :%s", test.toString());
 				System.out.printf("%nType :%s", test.annotationType());
 				System.out.printf("%nPriority :%s", test.priority());

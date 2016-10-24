@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.collect.Lists;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 import fr.wd.kata.business.services.IFoobarqixService;
 import fr.wd.kata.domain.FooBarQix;
@@ -22,6 +24,7 @@ import fr.wd.kata.rs.utils.URI;
  * This class is the service rest for application
  * @author wylson
  */
+@Api(value="/" , description = "controller foobarqix")
 @RestController
 public class FoobarqixRestController {
 
@@ -36,6 +39,9 @@ public class FoobarqixRestController {
 	 * @return ResponseEntity<List<String>>
 	 */
 	@RequestMapping(value = URI.FOOBARQIX, method = RequestMethod.GET)
+	@ApiOperation(value = "Find FooBarQixRest list elements",
+    notes = "no param actually",
+    response = FooBarQixRest.class)
 	public ResponseEntity<List<FooBarQixRest>> listAllNumbers() throws BusinessException {
 		List<FooBarQix> results = foobarqixService.calculteNumber(100);
 		List<FooBarQixRest> restResults = Lists.newArrayList(converter.reverse().convertAll(results));

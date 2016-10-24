@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import fr.wd.kata.config.ServicesConfig;
+import fr.wd.kata.config.FbqServiceConfig;
 import fr.wd.kata.domain.FooBarQix;
 
 /**
@@ -18,7 +18,7 @@ import fr.wd.kata.domain.FooBarQix;
  * @author wylson dibinga wd
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ServicesConfig.class})
+@ContextConfiguration(classes = {FbqServiceConfig.class})
 public class FoobarqixServiceImplTest {
 
 	@Autowired

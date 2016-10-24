@@ -3,12 +3,12 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-import fr.wd.kata.config.ServicesConfig;
+import fr.wd.kata.config.FbqServiceConfig;
 
 
 @EnableAutoConfiguration
 @ComponentScan(basePackages = { "fr.wd.kata.rs" })
-@Import({ ServicesConfig.class })
-public class AppFbqConfig {
+@Import({ FbqServiceConfig.class /*,FbqSecurityConfig.class*/, WebConfig.class})
+public class FbqAppConfig {
 
 }

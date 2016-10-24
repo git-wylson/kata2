@@ -11,7 +11,7 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 public class AppFbqWebInitializer extends SpringBootServletInitializer {
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(AppFbqConfig.class);
+		return application.sources(FbqAppConfig.class);
 	}
 
 }

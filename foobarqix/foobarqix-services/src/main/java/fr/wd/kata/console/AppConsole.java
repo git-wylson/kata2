@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import fr.wd.kata.business.services.IFoobarqixService;
-import fr.wd.kata.config.ServicesConfig;
+import fr.wd.kata.config.FbqServiceConfig;
 import fr.wd.kata.domain.FooBarQix;
 
 /**
@@ -17,7 +17,7 @@ public class AppConsole {
 
 	public static void main(String[] args) {
 		// We get the spring context for application.
-		SpringApplication app = new SpringApplication(ServicesConfig.class);
+		SpringApplication app = new SpringApplication(FbqServiceConfig.class);
 		app.setLogStartupInfo(false);
 		 
 		ConfigurableApplicationContext context = app.run(args);

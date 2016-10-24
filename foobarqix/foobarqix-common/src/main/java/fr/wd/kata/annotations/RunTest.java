@@ -14,6 +14,11 @@ public class RunTest {
 
 		System.out.println("============================ FIELD =============================");
 		getFieldInfos(TestExample.class);
+		
+		TestExample t =new TestExample();
+		t.getHeader();
+		 
+		
 
 	}
 

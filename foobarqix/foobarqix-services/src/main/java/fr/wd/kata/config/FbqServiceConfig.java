@@ -5,5 +5,5 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("fr.wd.kata.business") // search the fr.wd.kata.business package for @Component classes
-public class ServicesConfig {
+public class FbqServiceConfig {
 }

@@ -44,6 +44,27 @@ public class JavaFileCopier {
     {
      String in_File="C:/Users/wylson/Desktop/test/1.doc";
      String out_File="C:/Users/wylson/Desktop/test/2.doc";
+     
+     ///////////////
+      FileWriter fw = null;
+     BufferedWriter bw = null;
+     PrintWriter out = null;
+     try {
+         fw = new FileWriter(out_File, true);
+         bw = new BufferedWriter(fw);
+         //out = new PrintWriter(bw);
+         //out.println("the text");         
+         FileInputStream fin = new FileInputStream(in_File);
+         for (int c = fin.read(); c != -1; c = fin.read()) {
+				bw.write(c);
+			}
+         bw.close();
+         fw.close();
+         //out.close();
+     } catch (IOException e) {
+         //exception handling left as an exercise for the reader
+     } 
+     /////////////////////
  
      copier(in_File,out_File);
     }
@@ -66,3 +87,33 @@ public class JavaFileCopier {
     outChannel.close();
     }
 }
+
+
+public static void main(String[] args) {
+
+		File file = new File("C:/robots.txt");
+		FileInputStream fis = null;
+
+		try {
+			fis = new FileInputStream(file);
+
+			System.out.println("Total file size to read (in bytes) : "
+					+ fis.available());
+
+			int content;
+			while ((content = fis.read()) != -1) {
+				// convert to char and display it
+				System.out.print((char) content);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (fis != null)
+					fis.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}

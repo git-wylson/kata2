@@ -117,3 +117,61 @@ public static void main(String[] args) {
 			}
 		}
 	}
+
+
+
+
+
+
+
+ var waitForSomeTime = function (milliseconds) {
+      // attente asynchrone de milliseconds milli-secondes
+      var task = $q.defer();
+      $timeout(function () {
+        task.resolve(true);
+      }, milliseconds);
+      // on retourne la tâche
+      return task;
+    };
+    
+    
+    
+    
+ var task = { action: utils.waitForSomeTime(3000), isFinished: false };
+   
+    var promise = task.action.promise.then(function () {
+      // tâche annulée ?
+      if (task.isFinished) {
+        return;
+      }
+      // le chemin de l'URL de service
+      var path = '../ratkin-web/rest/registre';
+      let _parPage = vm.optionsPagination.pagination.parPage;
+      let _page = vm.optionsPagination.pagination.page;
+      let pagination = { "pagination": { "parPage": _parPage, "page": _page }, "filtres": vm.optionsPagination.filtres, "tri": vm.optionsPagination.tri };
+      // on demande les donnees
+      task = { action: dao.getData( path, pagination), isFinished: false };
+      // on retourne la promesse d'achèvement de la tâche
+      return task.action.promise;
+    });
+
+    // on analyse le résultat
+    promise.then(function (result) {
+      // fin d'attente de
+      //app.waiting = false;
+      // erreur ?
+      if (result.error === 0 && result.data !== undefined) {
+        // on met les données acquises dans la session
+        vm.rapports = result.data;
+        vm.optionsPagination.pagination = result.pagination;
+
+      } else {
+        // il y a eu des erreurs pour obtenir l'agenda
+        vm.errors = {
+          title: { text: "common.error.title", values: {} },
+          messages: utils.getErrors(result, $filter),
+          show: true
+        };
+        $rootScope.$broadcast('appMsgErrors', { appErrors: vm.errors });
+      }
+     });

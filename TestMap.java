@@ -103,3 +103,57 @@ public class TestMap {
 		return key;
 	}
 }
+
+
+
+
+
+
+
+
+public static String getCurrentUserLogin() {
+    SecurityContext securityContext = SecurityContextHolder.getContext();
+    Authentication authentication = securityContext.getAuthentication();
+    String userName = null;
+    if (authentication != null) {
+      if (authentication.getPrincipal() instanceof UserDetails) {
+        UserDetails springSecurityUser = (UserDetails) authentication.getPrincipal();
+        userName = springSecurityUser.getUsername();
+      } else if (authentication.getPrincipal() instanceof String) {
+        userName = (String) authentication.getPrincipal();
+      }
+    }
+    return userName;
+  }
+
+   
+  public static boolean isAuthenticated() {
+    SecurityContext securityContext = SecurityContextHolder.getContext();
+    Collection<? extends GrantedAuthority> authorities =
+        securityContext.getAuthentication().getAuthorities();
+    if (authorities != null) {
+      for (GrantedAuthority authority : authorities) {
+        if (authority.getAuthority().equals(AuthoritiesConstants.ANONYMOUS)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+   
+  public static boolean isCurrentUserInRole(String authority) {
+    SecurityContext securityContext = SecurityContextHolder.getContext();
+    Authentication authentication = securityContext.getAuthentication();
+    Collection<? extends GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+    if (authentication != null) {
+      if (authentication.getPrincipal() instanceof UserDetails) {
+        UserDetails springSecurityUser = (UserDetails) authentication.getPrincipal();
+        authorities = springSecurityUser.getAuthorities();
+      } else {
+        authorities = authentication.getAuthorities();
+      }
+      return authorities.contains(new SimpleGrantedAuthority(authority));
+    }
+    return false;
+  }

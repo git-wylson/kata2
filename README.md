@@ -175,3 +175,8 @@ public static void main(String[] args) {
         $rootScope.$broadcast('appMsgErrors', { appErrors: vm.errors });
       }
      });
+
+
+
+
+git config remote.origin.push develop:refs/heads/user/nomUser/nomBranche

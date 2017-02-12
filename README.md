@@ -180,3 +180,7 @@ public static void main(String[] args) {
 
 
 git config remote.origin.push develop:refs/heads/user/nomUser/nomBranche
+
+Implementation of dao layer and setting up embedded base h2 oracle for test.
+Spring data jpa configuration and puppet configuration
+Implementation of rwa service to calculate Expectedloss average

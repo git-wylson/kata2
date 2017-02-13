@@ -184,3 +184,23 @@ git config remote.origin.push develop:refs/heads/user/nomUser/nomBranche
 Implementation of dao layer and setting up embedded base h2 oracle for test.
 Spring data jpa configuration and puppet configuration
 Implementation of rwa service to calculate Expectedloss average
+
+
+
+	
+			System.out.println("xxxxxxxxxxxxxxx");
+			 Stream.of(new Link(1,new BigDecimal("1"),new BigDecimal("2")), 
+					 new Link(2,new BigDecimal("2"),new BigDecimal("4")),
+					 new Link(3,new BigDecimal("4"),new BigDecimal("5")))
+			 
+			.filter(a-> isBetween(new BigDecimal("4.5"),a.getValue1(),a.getValue2()))
+		    .findFirst()		    
+			.ifPresent(f -> {System.out.println("id: "+f.getId());});
+			System.out.println("xxxxxxxxxxxxxxx: "+isBetween(new BigDecimal("1.5"),new BigDecimal("1"),new BigDecimal("1.5")));
+		
+	 
+	// v1 <= val < v2 (inf <= val < sup )<======> val >= v1 et val < v2
+	static boolean isBetween(BigDecimal value, BigDecimal inf, BigDecimal sup){
+		//return  value.compareTo(inf) >= 0 && value.compareTo(sup)< 0;
+		return  inf.compareTo(value) <= 0 && value.compareTo(sup)< 0;
+	}

@@ -204,3 +204,19 @@ Implementation of rwa service to calculate Expectedloss average
 		//return  value.compareTo(inf) >= 0 && value.compareTo(sup)< 0;
 		return  inf.compareTo(value) <= 0 && value.compareTo(sup)< 0;
 	}
+
+
+
+CV : 
+One financing
+Le Profitality, 
+Rwa(pharos=risque calculer une fois par mois, 
+spot=estimation du risque qu'on a pris caculer une fois par semaine, 
+forecast=projection ou prevision) : le risque
+Nbi : le benefice  (Interets, commission) 
+
+Contractuel : montant en theorie
+Modelisé : montant à preter (en pratique)
+Business unit GLFI
+
+Deal : facilité
